@@ -1,0 +1,29 @@
+body {
+    background-image: url("/resources/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #cccccc;
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+.box {
+    /*background-color: rgba(255,255,255,.5);*/
+    background-color: #f1e6cc;
+    width: 50%;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    position:absolute;
+    top: 20%;
+    left: 25%;
+}
+
+/*.header {*/
+h1{
+    /*background-color: rgba(255,255,255,.5);*/
+    background-color: #f1e6cc;
+
+    padding: 10px
+
+}

@@ -1,0 +1,27 @@
+<html>
+    <head>    </head>
+    <body>
+        <!-- <h1> Puzzlers (we need a better name) </h1> -->
+        <md-content class="box">
+            <h2> Login </h3>
+            <!-- Username: <br> -->
+            <!-- <input type="text" name="username"> <br> <br> -->
+            <md-input-container>
+              <label> Username </label>
+              <input type="text"> </input>
+            </md-input-container> <br>
+            <md-input-container>
+              <label> Password </label>
+              <input type="text" name="password"> </input>
+            </md-input-container> <br>
+            <md-button class="md-raised" type="submit"> Go </md-button> <br> <br>
+            <!-- <input type="submit" value="Go"> <br> <br> -->
+            <b> Not registered yet? </b> <br> <br>
+            <a ui-sref="registration"> <md-button class=" md-raised"> Register </md-button> </a>
+            <!-- <a sref="register"><button type="button">Register</button></a> -->
+        </md-content>
+    </body>
+</html>
+
+<!-- TODO: Fix primary color so md-primary looks good -->
+<!-- TODO: ng-model to send username and password information to database -->
