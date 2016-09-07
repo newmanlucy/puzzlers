@@ -16,4 +16,8 @@ puzzlersApp.config(function($stateProvider, $urlRouterProvider){
      url: '/submit',
      templateUrl: './submit.html'
    })
+   .state('error', {
+     url: '/error',
+     templateUrl: './error.html'
+   })
 });
