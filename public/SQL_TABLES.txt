@@ -1,0 +1,48 @@
+CREATE DATABASE puzzle_site
+
+CREATE TABLE users(
+   uid INT NOT NULL AUTO_INCREMENT,
+   username VARCHAR(40) NOT NULL,
+   password_hash CHAR(60) NOT NULL,
+   permissions_level SMALLINT NOT NULL DEFAULT 1,
+   first_name VARCHAR(20),
+   last_name VARCHAR(20),
+   email VARCHAR(40),
+   house VARCHAR(20),
+   join_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY(uid),
+   UNIQUE username
+);
+
+CREATE TABLE problems(
+   problem_id INT NOT NULL AUTO_INCREMENT,
+   title VARCHAR(40) NOT NULL,
+   creator_uid VARCHAR(40) NOT NULL,
+   problem_desc_file_id INT,
+   answer_type SMALLINT NOT NULL,
+   answer_string VARCHAR(100),
+   answer_check_file_id INT,
+   release_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY(problem_id),
+   FOREIGN KEY (problem_desc_file_id) REFERENCES files(file_id),
+   FOREIGN KEY (answer_check_file_id) REFERENCES files(file_id)
+);
+
+CREATE TABLE solutions(
+   uid INT NOT NULL,
+   problem_id INT NOT NULL,
+   answer_file_id INT,
+   solve_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   difficulty_rating SMALLINT,
+   quality_rating SMALLINT,
+   PRIMARY KEY(uid, problem_id),
+   FOREIGN KEY (uid) REFERENCES users(uid),
+   FOREIGN KEY (problem_id) REFERENCES problems(problem_id)
+   FOREIGN KEY (answer_file_id) REFERENCES files(file_id),
+);
+
+CREATE TABLE files(
+   file_id INT NOT NULL AUTO_INCREMENT,
+   file_name VARCHAR(128),
+   PRIMARY KEY(file_id)
+)
