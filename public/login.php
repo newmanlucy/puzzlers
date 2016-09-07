@@ -21,7 +21,8 @@
             $_SESSION['login_user'] = $row['uid'];
             $_SESSION['login_username'] = $row['username'];
             $_SESSION['login_permissions'] = $row['permissions_level'];
-            header("location: php");
+            $previous_page = isset($_GET['location']) ? $_GET['location'] : "welcome.php";
+            header("location: " . $previous_page);
          } else {
             $error = "Your password was incorrect.";
          }
