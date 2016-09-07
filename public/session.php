@@ -11,12 +11,15 @@
    $login_session = $row['uid'];
    
    if(!isset($_SESSION['login_user'])){
-      header("location:login.php");
+      header("Location:login.php?location=" . urlencode($_SERVER['REQUEST_URI']));
+      exit;
    } else {
-   	 if($_SESSION['login_permissions'] < $page_permissions) {
+   	$page_permissions = isset($page_permissions) ? $page_permissions : 0;
+   	  if($_SESSION['login_permissions'] < $page_permissions) {
    	 	if(!($special_permissions && special_permissions_script($_SESSION['login_user']))) {
-   	 		header("location:restricted.php");
+   	 		header("Location:login.php?location=" . urlencode($_SERVER['HTTP_REFERER']));
+   	 		exit;
    	 	}
-   	 }
+   	  } 
    }
 ?>
