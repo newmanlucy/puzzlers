@@ -9,11 +9,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body ng-cloak>
 <div class="container">
-
+  <h1 class="header"> Puzzlers (we need a better name) </h1>
   <div ui-view>
-  <headerName> </headerName>
+
+  <!-- <headerName> </headerName> -->
+
   </div>
 </div>
 
@@ -27,8 +29,6 @@
   <script src="//npmcdn.com/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="app.js"> </script>
   <script src="states.js"> </script>
-  <script src="./global/directives/headerDirective.js"> </script>
-  <script src="./global/views/header.html"> </script>
 
 
 
