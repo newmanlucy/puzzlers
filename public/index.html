@@ -1,3 +1,5 @@
+
+
 <html ng-app="puzzlersApp" lang="en" >
 <meta charset="utf-8">
 <head>
@@ -9,8 +11,10 @@
 
 <body>
 <div class="container">
+
+  <div ui-view>
   <headerName> </headerName>
-  <div ui-view>  </div>
+  </div>
 </div>
 
 
@@ -23,7 +27,8 @@
   <script src="//npmcdn.com/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="app.js"> </script>
   <script src="states.js"> </script>
-  <script src="global/directives/headerDirective.js"> </script>
+  <script src="./global/directives/headerDirective.js"> </script>
+  <script src="./global/views/header.html"> </script>
 
 
 

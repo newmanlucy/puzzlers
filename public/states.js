@@ -10,7 +10,7 @@ puzzlersApp.config(function($stateProvider, $urlRouterProvider){
   })
    .state('registration', {
      url:'/register',
-     templateUrl: '/login/registration.html'
+     templateUrl: './login/registration.html'
    })
    .state('submit', {
      url: '/submit',
