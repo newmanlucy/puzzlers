@@ -1,21 +1,29 @@
 <html>
     <head>    </head>
     <body>
-        <md-content class="box">
+        <md-content class="box" layout="column">
             <h3> Register! </h3>
-            Username: <br>
-            <input type="text" name="username"> <br> <br>
-            Password: <br>
-            <input type="password" name="password"> <br> <br>
-            Password (again): <br>
-            <input type="password" name="password"> <br> <br>
-            House affiliation: <br>
-            <select>
-                <option value="booth">Booth</option>
-                <option value="breck">Breck</option>
-                <option value="other">Other</option>
-            </select> <br> <br>
-            <input type="submit" value="Register">
+            <md-input-container>
+              <label> Username </label>
+              <input type="text"> </input>
+            </md-input-container>
+            <md-input-container>
+              <label> Password </label>
+              <input type="password"> </input>
+            </md-input-container>
+            <md-input-container>
+              <label> Password (again) </label>
+              <input type="password"> </input>
+            </md-input-container>
+            <md-input-container>
+              <label> House affiliation </label>
+              <md-select ng-model="house">
+                <md-option> Booth </md-option>
+                <md-option> Breck </md-option>
+                <md-option> Other </md-option>
+              </md-select>
+            </md-input-container>
+            <md-button class="md-raised" type="submit"> Register </md-button>
         </md-content>
     </body>
 </html>
